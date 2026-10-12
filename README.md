@@ -1,1 +1,818 @@
-# shakamanyktv-s-website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHAKAMAN YKTV | Boots Movement</title>
+  <meta name="description" content="SHAKAMAN YKTV — DJ & Producer | Amapiano | Boots Movement Originator" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070707;
+      --bg-2:#101010;
+      --panel:#141414;
+      --panel-2:#1a1a1a;
+      --gold:#E8B86D;
+      --gold-soft:#f2d7a3;
+      --white:#f5f5f5;
+      --muted:#a7a7a7;
+      --line:#232323;
+      --green:#1DB954;
+      --red:#FF0000;
+      --shadow:0 24px 60px rgba(0,0,0,0.45);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Outfit",sans-serif;
+      background:var(--bg);
+      color:var(--white);
+      line-height:1.6;
+      letter-spacing:0.01em;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(1200px,92%);
+      margin:0 auto;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:rgba(7,7,7,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:82px;
+    }
+
+    .brand{
+      font-weight:900;
+      color:var(--gold);
+      line-height:0.9;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      font-size:1.1rem;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-size:0.78rem;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+    }
+
+    .nav-links a{
+      color:#a3a3a3;
+      transition:0.25s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold);
+    }
+
+    .nav-links .book-link{
+      color:var(--gold);
+      font-weight:800;
+    }
+
+    .socials{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:1.2rem;
+    }
+
+    .socials a{
+      width:36px;
+      height:36px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--line);
+      border-radius:50%;
+      background:rgba(255,255,255,0.02);
+      transition:0.25s ease;
+    }
+
+    .socials a:hover{
+      border-color:var(--gold);
+      transform:translateY(-1px);
+    }
+
+    .hero{
+      position:relative;
+      background:#000;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.94) 18%, rgba(0,0,0,0.72) 38%, rgba(0,0,0,0.38) 66%, rgba(0,0,0,0.12) 100%),
+        url('https://images.unsplash.com/photo-1516026672322-bc52d61a55e5?q=80&w=1600') center/cover no-repeat;
+      opacity:0.65;
+      filter: saturate(1.1);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      align-items:center;
+      gap:60px;
+      padding:80px 0 60px;
+      min-height:78vh;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--gold);
+      color:#0b0b0b;
+      padding:8px 14px;
+      font-size:0.7rem;
+      text-transform:uppercase;
+      font-weight:900;
+      letter-spacing:0.18em;
+      border-radius:999px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero h1{
+      margin-top:18px;
+      font-size:clamp(3.4rem,7vw,6.1rem);
+      line-height:0.88;
+      color:var(--gold);
+      font-weight:900;
+      letter-spacing:-0.05em;
+      text-transform:uppercase;
+    }
+
+    .hero-tag{
+      margin-top:18px;
+      font-size:1rem;
+      letter-spacing:0.32em;
+      text-transform:uppercase;
+      color:#ff9d62;
+      font-weight:700;
+    }
+
+    .hero-copy{
+      margin-top:18px;
+      max-width:560px;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    .hero-actions{
+      margin-top:28px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:900;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      transition:0.25s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:#111;
+      box-shadow:0 18px 28px rgba(232,184,109,0.22);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 20px 30px rgba(232,184,109,0.34);
+    }
+
+    .btn-secondary{
+      background:transparent;
+      color:var(--white);
+      border-color:var(--line);
+    }
+
+    .btn-secondary:hover{
+      border-color:var(--gold);
+      color:var(--gold);
+    }
+
+    .hero-visual{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:1;
+    }
+
+    .portrait-wrap{
+      width:min(100%,500px);
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.02);
+      box-shadow:var(--shadow);
+    }
+
+    .portrait-wrap img{
+      width:100%;
+      min-height:680px;
+      object-fit:cover;
+    }
+
+    .stats-row{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,0.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px 18px;
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      color:var(--gold);
+      font-size:1.7rem;
+      font-weight:900;
+      line-height:1;
+      margin-bottom:6px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:0.72rem;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+    }
+
+    section{
+      padding:90px 0;
+      border-top:1px solid var(--line);
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:30px;
+      margin-bottom:36px;
+    }
+
+    .section-title{
+      font-size:clamp(1.8rem,3vw,2.8rem);
+      font-weight:900;
+      color:var(--gold);
+      letter-spacing:-0.04em;
+      text-transform:uppercase;
+    }
+
+    .section-subtitle{
+      color:var(--muted);
+      max-width:560px;
+      font-size:0.96rem;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:32px;
+      align-items:stretch;
+    }
+
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:28px;
+      box-shadow:0 18px 30px rgba(0,0,0,0.18);
+    }
+
+    .panel p{
+      color:#d8d8d8;
+      font-size:1rem;
+      margin-bottom:14px;
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+      margin-top:20px;
+    }
+
+    .mini-card{
+      background:rgba(232,184,109,0.04);
+      border:1px solid rgba(232,184,109,0.18);
+      border-radius:18px;
+      padding:18px 16px;
+    }
+
+    .mini-card strong{
+      display:block;
+      color:var(--gold);
+      margin-bottom:6px;
+      font-size:0.85rem;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+    }
+
+    .mini-card span{
+      color:#d9d9d9;
+      font-size:0.92rem;
+    }
+
+    .booking-box{
+      background:linear-gradient(180deg, rgba(232,184,109,0.08), rgba(255,255,255,0.02));
+      border:1px solid rgba(232,184,109,0.22);
+      border-radius:26px;
+      padding:28px;
+    }
+
+    .booking-box h3{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      font-size:0.82rem;
+      margin-bottom:16px;
+    }
+
+    .booking-box p{
+      color:var(--muted);
+      margin-bottom:20px;
+    }
+
+    .contact-stack{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      background:rgba(255,255,255,0.02);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 16px;
+      color:#ececec;
+      font-weight:600;
+    }
+
+    .contact-item .icon{
+      width:36px;
+      height:36px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:rgba(232,184,109,0.08);
+      color:var(--gold);
+      font-size:1.1rem;
+    }
+
+    .albums{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:24px;
+    }
+
+    .album-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      transition:0.25s ease;
+    }
+
+    .album-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(232,184,109,0.4);
+    }
+
+    .album-title{
+      font-size:1.45rem;
+      color:var(--white);
+      font-weight:800;
+      margin-bottom:6px;
+    }
+
+    .album-meta{
+      color:var(--muted);
+      font-size:0.9rem;
+      margin-bottom:18px;
+    }
+
+    .album-links{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .album-links a{
+      flex:1 1 120px;
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:10px;
+      font-weight:800;
+      font-size:0.74rem;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      border:1px solid transparent;
+    }
+
+    .sp{background:var(--green);color:#081209;}
+    .ap{background:#fff;color:#111;}
+    .yt{background:var(--red);color:#fff;}
+
+    .cta-block{
+      background:
+        linear-gradient(120deg, rgba(232,184,109,0.12), rgba(255,255,255,0.02)),
+        #0d0d0d;
+      border:1px solid rgba(232,184,109,0.3);
+      border-radius:28px;
+      padding:36px 28px;
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      align-items:center;
+    }
+
+    .cta-block h3{
+      font-size:clamp(1.8rem,3vw,2.5rem);
+      letter-spacing:-0.04em;
+      line-height:1.1;
+      text-transform:uppercase;
+      color:var(--white);
+    }
+
+    .cta-block p{
+      color:var(--muted);
+      margin-top:8px;
+      max-width:420px;
+    }
+
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:flex-end;
+    }
+
+    .btn-lg{
+      padding:16px 22px;
+      border-radius:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+    }
+
+    .booking-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1000;
+      display:flex;
+      gap:10px;
+      flex-direction:column;
+    }
+
+    .floating-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:180px;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      border:1px solid transparent;
+      box-shadow:var(--shadow);
+    }
+
+    .wa{
+      background:var(--green);
+      color:#041508;
+    }
+
+    .email{
+      background:var(--gold);
+      color:#111;
+    }
+
+    footer{
+      padding:28px 0 60px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      text-align:center;
+    }
+
+    @media (max-width: 980px){
+      .hero-inner{
+        grid-template-columns:1fr;
+        padding-top:60px;
+      }
+
+      .hero-visual{
+        order:-1;
+      }
+
+      .about-grid,
+      .albums,
+      .cta-block{
+        grid-template-columns:1fr;
+      }
+
+      .cta-block{
+        display:block;
+      }
+
+      .cta-actions{
+        justify-content:flex-start;
+        margin-top:18px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:16px;
+        padding:18px 0;
+      }
+
+      .nav-links{
+        width:100%;
+        justify-content:center;
+      }
+
+      .stats-row{
+        grid-template-columns:1fr;
+      }
+
+      .section{
+        padding:72px 0;
+      }
+
+      .section-head{
+        display:block;
+      }
+
+      .section-subtitle{
+        margin-top:10px;
+      }
+
+      .booking-float{
+        left:10px;
+        right:10px;
+        bottom:10px;
+        flex-direction:row;
+      }
+
+      .floating-btn{
+        flex:1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">Shakaman<br>YKTV</div>
+
+      <nav class="nav-links">
+        <a href="#music">Music</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="book-link">Book</a>
+      </nav>
+
+      <div class="socials">
+        <a href="https://open.spotify.com/artist/726PC2ajNUnuZW1sRD6is1" target="_blank" aria-label="Spotify">🟢</a>
+        <a href="https://music.apple.com/za/artist/shakaman-yktv/1689738656" target="_blank" aria-label="Apple Music">🍎</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">Boots Movement Originator</span>
+          <h1>Shakaman<br>YKTV</h1>
+          <div class="hero-tag">DJ &amp; Producer • Amapiano</div>
+          <p class="hero-copy">Rixaka Hlungwani — Soweto &amp; West Rand. Creator of Boots Movement, pushing authentic sound and culture across the region and beyond.</p>
+
+          <div class="hero-actions">
+            <a href="#music" class="btn btn-primary">View Albums</a>
+            <a href="#contact" class="btn btn-secondary">Book Now</a>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat">
+              <strong>3</strong>
+              <span>Featured Albums</span>
+            </div>
+            <div class="stat">
+              <strong>2024</strong>
+              <span>Latest Era</span>
+            </div>
+            <div class="stat">
+              <strong>Global</strong>
+              <span>Streaming Reach</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="portrait-wrap">
+            <img src="shakaman.jpg" alt="ShakaMan YKTV" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">About the Movement</div>
+          <div class="section-subtitle">From Soweto to the world, Shakaman YKTV brings the Boots Movement to life through sound, rhythm, and cultural energy.</div>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel">
+            <p>Shakaman YKTV is more than a DJ — he is a cultural creator shaping the sound of a movement. His work brings an unmistakable Amapiano energy rooted in authentic South African rhythm and modern club culture.</p>
+            <p>With an unmistakable presence and a growing catalog, he continues to build momentum through live performances, collaborations, and genre-defining releases.</p>
+
+            <div class="mini-grid">
+              <div class="mini-card">
+                <strong>Base</strong>
+                <span>Soweto &amp; West Rand</span>
+              </div>
+              <div class="mini-card">
+                <strong>Style</strong>
+                <span>Amapiano / Club / Movement Sound</span>
+              </div>
+              <div class="mini-card">
+                <strong>Focus</strong>
+                <span>Clubs, Festivals, Private Events</span>
+              </div>
+              <div class="mini-card">
+                <strong>Brand</strong>
+                <span>Boots Movement</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-box" id="contact">
+            <h3>Booking</h3>
+            <p>Available for clubs, festivals, private events, and branded performances. Book Shakaman YKTV for a premium live experience.</p>
+
+            <div class="contact-stack">
+              <a href="https://wa.me/27651715882?text=Hi%20ShakaMan%20YKTV%20I%20want%20to%20book%20you" target="_blank" class="contact-item">
+                <span class="icon">💬</span>
+                <span>+27 65 171 5882</span>
+              </a>
+
+              <a href="tel:+27651715882" class="contact-item">
+                <span class="icon">📞</span>
+                <span>Call Now</span>
+              </a>
+
+              <a href="mailto:shakamanbookings@gmail.com?subject=Booking%20Request" class="contact-item">
+                <span class="icon">✉️</span>
+                <span>shakamanbookings@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="music">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">Featured Releases</div>
+          <div class="section-subtitle">Stream the latest from the Boots Movement across the major digital platforms.</div>
+        </div>
+
+        <div class="albums">
+          <div class="album-card">
+            <div class="album-title">The Next Better Kid</div>
+            <div class="album-meta">Solo Album • 2025</div>
+            <div class="album-links">
+              <a class="sp" href="https://open.spotify.com/album/1KnZ7MDVeYEet7JAyQwVxp?si=tZI813KVQuG7PFHG2OL_Zg&utm_source=copy-link" target="_blank">🟢 Spotify</a>
+              <a class="ap" href="https://music.apple.com/za/album/the-next-better-kid/1807642894" target="_blank">🍎 Apple</a>
+              <a class="yt" href="https://youtube.com/playlist?list=OLAK5uy_nLDU2g4nDM1g8XjnYH2eBicXOzZ_sjico&si=bflMGnbvb7P5JK60" target="_blank">▶️ YouTube</a>
+            </div>
+          </div>
+
+          <div class="album-card">
+            <div class="album-title">New Age Kings</div>
+            <div class="album-meta">with Lowbass Djy &amp; Ndibo Ndibs • 2024</div>
+            <div class="album-links">
+              <a class="sp" href="https://open.spotify.com/album/4D5FiAlFFlKWALxkTClMiL?si=HOLHdOX_SiWNTnoWcBAunQ&utm_source=copy-link" target="_blank">🟢 Spotify</a>
+              <a class="ap" href="https://music.apple.com/za/album/new-age-kings/1771948595" target="_blank">🍎 Apple</a>
+              <a class="yt" href="https://youtube.com/playlist?list=OLAK5uy_nxaGcogtusRKsa1N4D6TqGnm3PavARSXQ&si=H2vq_Nlo__drtXZ2" target="_blank">▶️ YouTube</a>
+            </div>
+          </div>
+
+          <div class="album-card">
+            <div class="album-title">The Heads of State</div>
+            <div class="album-meta">with DA Trill &amp; Muziqal Tone • 2024</div>
+            <div class="album-links">
+              <a class="sp" href="https://open.spotify.com/album/2mrChiUib5wgIeMaqvkhMt?si=TJvkQTpDRA64Aj7j7RPDCg&utm_source=copy-link" target="_blank">🟢 Spotify</a>
+              <a class="ap" href="https://music.apple.com/za/album/the-heads-of-state/1766135233" target="_blank">🍎 Apple</a>
+              <a class="yt" href="https://youtube.com/playlist?list=OLAK5uy_nvkPcNg5V-8h50wfZqlvygx30SLv_2sI4&si=FOATj1Sfivd__xXF" target="_blank">▶️ YouTube</a>
+            </div>
+          </div>
+
+          <div class="album-card">
+            <div class="album-title">Boots Academy Compilation Vol.1</div>
+            <div class="album-meta">Movement Compilation</div>
+            <div class="album-links">
+              <a class="sp" href="https://open.spotify.com/artist/726PC2ajNUnuZW1sRD6is1" target="_blank">🟢 Artist</a>
+              <a class="ap" href="https://music.apple.com/za/artist/shakaman-yktv/1689738656" target="_blank">🍎 Artist</a>
+              <a class="yt" href="https://youtube.com/@shakaman_yktv" target="_blank">▶️ YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-block">
+          <div>
+            <h3>Book Shakaman YKTV</h3>
+            <p>For clubs, festivals, private events, and signature sets built to move the room.</p>
+          </div>
+
+          <div class="cta-actions">
+            <a href="https://wa.me/27651715882?text=Hi%20ShakaMan%20YKTV%20I%20want%20to%20book%20you" target="_blank" class="btn btn-primary btn-lg">WhatsApp</a>
+            <a href="mailto:shakamanbookings@gmail.com?subject=Booking%20Request" class="btn btn-secondary btn-lg">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="booking-float">
+    <a class="floating-btn wa" href="https://wa.me/27651715882?text=Hi%20ShakaMan%20YKTV%20I%20want%20to%20book%20you" target="_blank">WhatsApp</a>
+    <a class="floating-btn email" href="mailto:shakamanbookings@gmail.com?subject=Booking%20Request">Email</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      © 2026 Shakaman YKTV • Boots Movement
+    </div>
+  </footer>
+
+</body>
+</html>
